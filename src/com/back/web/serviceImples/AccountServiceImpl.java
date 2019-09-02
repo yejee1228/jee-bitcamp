@@ -17,11 +17,12 @@ public class AccountServiceImpl implements AccountService{
 	}
 	
 	@Override
-	public void createAccount(int money) {
+	public void createAccount(String money) {
 		AccountBean account = new AccountBean();
-		account.setMoney(String.valueOf(money));
+		account.setMoney(money);
 		account.setAccountNum(createAccountNum());
 		account.setToday(findDate());
+		System.out.println(account.toString());
 		accounts.add(account);
 	}
 
@@ -30,7 +31,7 @@ public class AccountServiceImpl implements AccountService{
 		Random ran = new Random();
 		int first = ran.nextInt(9999);
 		int twice = ran.nextInt(9999);
-		String num = String.format("%4d - %4d", first,twice);
+		String num = String.format("%04d - %04d", first,twice);
 		return num;
 	}
 

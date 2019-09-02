@@ -5,7 +5,7 @@ import java.util.List;
 import com.bank.web.domain.AccountBean;
 
 public interface AccountService {
-	public void createAccount(int money); //돈 입금하면 오늘 날짜 시간과 생성된 계좌번호가 같이 생성.
+	public void createAccount(String money); //돈 입금하면 오늘 날짜 시간과 생성된 계좌번호가 같이 생성.
 	public String createAccountNum();//계좌 생성(랜덤으로 0000-0000)- 유닉한 값으로 생성.
 	public List<AccountBean> findAll();
 	public AccountBean findByAccountNum(String accountNum);

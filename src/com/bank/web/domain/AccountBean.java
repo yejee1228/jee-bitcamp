@@ -4,13 +4,11 @@ import java.io.Serializable;
 
 public class AccountBean implements Serializable {
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String accountNum, today, money;
 
+	
+	
 	public String getAccountNum() {
 		return accountNum;
 	}
@@ -37,7 +35,7 @@ public class AccountBean implements Serializable {
 
 	@Override
 	public String toString() {
-		return "AccountBean [accountNum=" + accountNum + ", today=" + today + ", money=" + money + "]";
+		return "계좌정보[accountNum=" + accountNum + ", today=" + today + ", money=" + money + "]";
 	}
 	
 }
