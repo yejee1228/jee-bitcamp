@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.back.web.serviceImples.MemberServiceImpl;
 import com.bank.web.domain.CustomerBean;
+import com.bank.web.services.MemberService;
 
 @WebServlet("/member.do")
 public class MemberController extends HttpServlet {
@@ -27,6 +29,8 @@ public class MemberController extends HttpServlet {
 		customer.setPw(pw);
 		customer.setSsn(ssn);
 		System.out.println(customer.toString());
+		MemberService service = new MemberServiceImpl();
+		service.join(customer);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
