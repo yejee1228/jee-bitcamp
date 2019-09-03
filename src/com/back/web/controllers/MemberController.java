@@ -16,7 +16,6 @@ public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("도착함3.");
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
@@ -28,7 +27,6 @@ public class MemberController extends HttpServlet {
 		customer.setName(name);
 		customer.setPw(pw);
 		customer.setSsn(ssn);
-		System.out.println(customer.toString());
 		MemberService service = new MemberServiceImpl();
 		service.join(customer);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
