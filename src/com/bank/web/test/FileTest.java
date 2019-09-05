@@ -22,7 +22,7 @@ public class FileTest {
 														File.separator);
 	public static void main(String[] args) {
 		try {
-			File file = new File(FILE_PATH+"customers.text");
+			File file = new File(FILE_PATH+"customers.txt");
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file,true));
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String msg = "";

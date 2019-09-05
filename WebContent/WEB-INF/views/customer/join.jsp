@@ -16,6 +16,9 @@
 		이름 <input type="text" name="name" /><br/>
 		주민번호 <input type="text" name="ssn" /><br/>
 		신용도 <input type="text" name="credit" /><br/>
+		<input type="hidden" name = "action" value="join" />
+		<input type="hidden" name = "folder" value="customer" />
+		<input type="hidden" name = "dest" value="login" />
 		<input type="submit" id="test" value = "전송">
 	</form>
 </div>

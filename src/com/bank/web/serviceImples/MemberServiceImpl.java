@@ -1,25 +1,31 @@
-package com.back.web.serviceImples;
+package com.bank.web.serviceImples;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bank.web.daoImpls.MemberDAOImpl;
+import com.bank.web.daos.MemberDAO;
 import com.bank.web.domain.CustomerBean;
 import com.bank.web.domain.EmployeeBean;
 import com.bank.web.domain.MemberBean;
+import com.bank.web.pool.Constants;
 import com.bank.web.services.MemberService;
 
 public class MemberServiceImpl implements MemberService {
-	private List<CustomerBean> customers;
+	//private List<CustomerBean> customers;
 	private List<EmployeeBean> employees;
-	
+	private CustomerBean customer;
+	private MemberDAO dao;
 	
 	public MemberServiceImpl() {
-		customers = new ArrayList<>();
+	//	customers = new ArrayList<>();
 		employees = new ArrayList<>();
+		customer = new CustomerBean();
+		dao = new MemberDAOImpl();
 	}
 	@Override
 	public void join(CustomerBean param) {
-		customers.add(param);
+		dao.insertCustomer(param);
 	}
 
 	@Override
@@ -27,7 +33,7 @@ public class MemberServiceImpl implements MemberService {
 		employees.add(param);
 		
 	}
-
+/*
 	@Override
 	public List<CustomerBean> findAllCustomers() {
 		return customers;
@@ -91,16 +97,12 @@ public class MemberServiceImpl implements MemberService {
 		
 		return m;
 	}
-
+*/
 	@Override
-	public boolean login(MemberBean param) {
-		boolean flag = false;
-		if(findById(param.getId()).getPw().equals(param.getPw())) {
-			flag = true;
-		}
-		return flag;
+	public CustomerBean login(CustomerBean param) {
+		return dao.login(param);
 	}
-
+/*
 	@Override
 	public int countMembers() {
 		return customers.size();
@@ -141,7 +143,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return flag;		
 	}
-
+*/
 	
 
 	

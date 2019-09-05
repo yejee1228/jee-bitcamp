@@ -1,4 +1,4 @@
-package com.back.web.controllers;
+package com.bank.web.controllers;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.back.web.serviceImples.AccountServiceImpl;
+import com.bank.web.serviceImples.AccountServiceImpl;
 import com.bank.web.services.AccountService;;
 
 @WebServlet("/account.do")
