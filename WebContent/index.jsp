@@ -24,11 +24,11 @@
 <script>
 $('#btn').click(function(){
 	alert('버튼클릭!!');
-	location.assign('<%=request.getContextPath()%>/member.do?action=move&folder=customer&dest=login');
+	location.assign('<%=request.getContextPath()%>/customer.do?action=move&folder=customer&page=login');
 });
 $('#href').click(function(){
 	alert('바로가기클릭!!');
-	location.assign('<%=request.getContextPath()%>/member.do?action=move&folder=customer&dest=join');
+	location.assign('<%=request.getContextPath()%>/customer.do?action=move&folder=customer&page=join');
 });
 </script>
 </body>
