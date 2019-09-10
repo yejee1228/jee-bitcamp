@@ -3,6 +3,7 @@ package com.bank.web.command;
 import javax.servlet.http.HttpServletRequest;
 
 import com.bank.web.domain.CustomerBean;
+import com.bank.web.pool.Constants;
 import com.bank.web.serviceImples.MemberServiceImpl;
 import com.bank.web.services.MemberService;
 
@@ -25,7 +26,7 @@ public class LoginCommand extends MoveCommand{
 			request.setAttribute("customer", customer);
 			Receiver.cmd.setPage("mypage");
 		} else {
-			Receiver.cmd.setPage("login");
+			Receiver.cmd.setView(String.format(Constants.VIEW_PATH,domain,"login"));
 			System.out.println("실패"+Receiver.cmd.getPage());
 
 		}
